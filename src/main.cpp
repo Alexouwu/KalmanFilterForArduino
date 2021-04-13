@@ -3,7 +3,7 @@
 #include <BasicLinearAlgebra.h>
 
 using namespace BLA;
-Kalman kalmanazo;
+KALMAN kalmanazo;
 
 void setup()
 {

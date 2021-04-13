@@ -10,11 +10,11 @@
 #include <BasicLinearAlgebra.h>
 using namespace BLA;
 
-class Kalman{
+class KALMAN{
 
     public:
-    Kalman();
-    ~Kalman();
+    KALMAN();
+    ~KALMAN();
 
     BLA::Matrix<2,1> xk_pred(BLA::Matrix<2,2> F, BLA::Matrix<2,1> G, BLA::Matrix<2,1> xk_1, BLA::Matrix<1,1> uk_1);
     BLA::Matrix<2,2> Pk_pred(BLA::Matrix<2,2> F,BLA::Matrix<2,2> Pk_1_correc,BLA::Matrix<2,2> Qk_1);
