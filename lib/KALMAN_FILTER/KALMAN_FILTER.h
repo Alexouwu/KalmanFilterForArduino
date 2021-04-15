@@ -20,6 +20,7 @@ class KALMAN{
     BLA::Matrix<2,2> Pk_pred(BLA::Matrix<2,2> F,BLA::Matrix<2,2> Pk_1_correc,BLA::Matrix<2,2> Qk_1);
     BLA::Matrix<2,1> Kk(BLA::Matrix<2,2> Pk_predict, BLA::Matrix<1,2> Hk, BLA::Matrix<1,1> Rk);
     BLA::Matrix<2,1> xk_correction(BLA::Matrix<2,1> xk_predict, BLA::Matrix<2,1> K1, BLA::Matrix<1,1> y, BLA::Matrix<1,2> Hk);
+    BLA::Matrix<2,2> Pk_correction(BLA::Matrix<2,1> K1, BLA::Matrix<1,2> Hk, BLA::Matrix<2,2> Pk_predict);
     private:
 
 };

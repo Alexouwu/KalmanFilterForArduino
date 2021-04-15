@@ -32,3 +32,11 @@ BLA::Matrix<2,1> KALMAN::xk_correction(BLA::Matrix<2,1> xk_predict, BLA::Matrix<
 {
     return (xk_predict+K1*(y-Hk*xk_predict));
 }
+
+BLA::Matrix<2,2> KALMAN::Pk_correction(BLA::Matrix<2,1> K1, BLA::Matrix<1,2> Hk, BLA::Matrix<2,2> Pk_predict)
+{
+    BLA::Matrix<2,2> temp;
+    temp << 1, 1,
+            1, 1;
+    return (((temp)-(K1*Hk))*Pk_predict);
+}

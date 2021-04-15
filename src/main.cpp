@@ -49,7 +49,8 @@ void setup()
     Serial << "Kk: " << kalmanazo.Kk(kalmanazo.Pk_pred(F, Pk_1, Q), Hk, Rk) << '\n';
     Serial << "Xk_corr: " << kalmanazo.xk_correction(kalmanazo.xk_pred(F, G, Xk_1, u),
     kalmanazo.Kk(kalmanazo.Pk_pred(F, Pk_1, Q), Hk, Rk), y,Hk) << '\n';
-    
+    Serial << "Pk_corr: " << kalmanazo.Pk_correction(kalmanazo.Kk(kalmanazo.Pk_pred(F, Pk_1, Q), Hk, Rk),
+    Hk, kalmanazo.Pk_pred(F, Pk_1, Q)) << '\n';
 }
 
 void loop()
