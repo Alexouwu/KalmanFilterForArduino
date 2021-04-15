@@ -21,3 +21,9 @@ BLA::Matrix<2,2> KALMAN::Pk_pred(BLA::Matrix<2,2> F,BLA::Matrix<2,2> Pk_1_correc
 
     return (F*Pk_1_correc)*(~F)+Qk_1;
 }
+
+BLA::Matrix<2,1> KALMAN::Kk(BLA::Matrix<2,2> Pk_predict, BLA::Matrix<1,2> Hk, BLA::Matrix<1,1> Rk)
+{
+    BLA::Matrix<1,1> temp = (Hk*Pk_predict*(~Hk)+Rk);
+    return (Pk_predict*(~Hk)*temp.Inverse());
+}
