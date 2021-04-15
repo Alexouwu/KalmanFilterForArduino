@@ -39,11 +39,16 @@ void setup()
     BLA::Matrix<1, 1> Rk;
     Rk << 0.05;
 
+    BLA::Matrix<1, 1> y;
+    y << 2.2;
+
     delay(1000);
 
     Serial << "Xk: " << kalmanazo.xk_pred(F, G, Xk_1, u) << '\n';
     Serial << "Pk_predict" << kalmanazo.Pk_pred(F, Pk_1, Q) << '\n';
     Serial << "Kk: " << kalmanazo.Kk(kalmanazo.Pk_pred(F, Pk_1, Q), Hk, Rk) << '\n';
+    Serial << "Xk_corr: " << kalmanazo.xk_correction(kalmanazo.xk_pred(F, G, Xk_1, u),kalmanazo.Kk(kalmanazo.Pk_pred(F, Pk_1, Q), Hk, Rk),
+    y,Hk) << '\n';
 }
 
 void loop()
